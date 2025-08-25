@@ -19,9 +19,10 @@ adb shell
 su
 ```
 
-Install APKs
+Install APKs & SPLIT APKs
 ```
 adb install <apkname>
+adb install-multiple <splitapkname1> <splitapkname2> <splitapkname3> <splitapkname4>
 ```
 
 Uninstall APKs
