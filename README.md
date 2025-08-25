@@ -62,7 +62,7 @@ adb shell am start-activity -n com.android.insecurebankv2/com.android.insecureba
 adb shell am start-activity -n com.android.insecurebankv2/.PostLogin
 ```
 
-##### Intent options with Activities
+#### Intent options with Activities
 Combining Action with Activity -a android.intent.action.VIEW 
 ```
 adb shell am start-activity -a android.intent.action.VIEW -n com.android.insecurebankv2/.PostLogin
