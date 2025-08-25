@@ -50,7 +50,7 @@ adb shell pm path <packagename>
 ```
 
 #### Activity, Service & Broadcast handling
--n component name(Pull path to activity)
+**-n** component name(Pull path to activity)
 ```
 adb shell am start-activity -n packagename/activityname
 ```
