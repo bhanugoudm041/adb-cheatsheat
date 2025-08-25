@@ -50,7 +50,7 @@ adb shell pm path <packagename>
 ```
 
 #### Activity, Service & Broadcast handling
-**-n** component name(Pull path to activity)
+**-n** component name(Pull path to activity). This below commands send Intent to launch activities
 ```
 adb shell am start-activity -n packagename/activityname
 ```
@@ -60,3 +60,23 @@ adb shell am start-activity -n com.android.insecurebankv2/com.android.insecureba
                         [OR]
 adb shell am start-activity -n com.android.insecurebankv2/.PostLogin
 ```
+
+##### Intent options
+Combining Action with Activity -a android.intent.action.VIEW 
+```
+adb shell am start-activity -a android.intent.action.VIEW -n com.android.insecurebankv2/.PostLogin
+```
+
+Sending strings via extra strings with Intent
+```
+--es key "value" or -e key "value"
+adb shell am start-activity -n com.android.insecurebankv2/.PostLogin --es reg_url "https://3kal.medium.com"
+```
+
+Sending data via data URI with Intent
+```
+-d <DATA_URI>
+adb shell am start-activity -n com.android.insecurebankv2/.PostLogin -d "https://hello?abc=hii"
+```
+
+
