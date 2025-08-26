@@ -1,4 +1,4 @@
-# adb-cheatsheat
+# adb-drozer-cheatsheat
 Contains all ADB commands
 
 ## Basic commands
