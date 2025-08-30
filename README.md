@@ -142,7 +142,7 @@ Example:
 ```
 adb shell content query --uri content://com.example.vulnerableapp.provider/pwds
 adb shell content query --uri content://com.example.vulnerableapp.provider/pwds --projection "'"
-adb shell content query --uri content://com.example.vulnerableapp.provider --projection "' UNION SELECT * FROM sqlite_master WHERE type='table';-- "
+adb shell content query --uri content://com.example.vulnerableapp.provider/pwds --projection "' UNION SELECT * FROM sqlite_master WHERE type='table';-- "
 ```
 DROZER contentproviders
 ```
