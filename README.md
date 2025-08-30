@@ -56,6 +56,23 @@ adb forward tcp:hostport tcp:androidport
 adb reverse tcp:androidport tcp:hostport
 ```
 
+Access settings of emulator & configuring them with namespaces(These are like environment variable to access and configure settings on android from shell)
+```
+adb shell settings   #Help menu or list all available options
+```
+```
+adb shell settings list global     #lists all global namespaces. otherthan global we have system & secure
+```
+```
+adb shell settings put global http_proxy 127.0.0.1:8080    #configure http proxy with http_proxy namespace
+```
+```
+adb shell settings get global http_proxy       #Get a namespace configuration:  scope set to global & key set to http_proxy
+```
+```
+adb shell settings delete global http_proxy      #Deleting the namespace configuration:  scope set to global & key set to http_proxy
+```
+
 
 ## Activity, Service & Broadcast handling
 ### Activity
